@@ -8,8 +8,13 @@ import (
 
 func main() {
 	r := gin.Default()
-
-	r.GET("/", controllers.GetBooks)
 	models.ConnectDatabase()
+
+	r.GET("/books", controllers.GetBooks)
+	r.GET("/books/:id", controllers.GetBook)
+	r.POST("/add", controllers.AddBook)
+	r.DELETE("/books/:id", controllers.DelBook)
+	r.PATCH("/books/:id", controllers.EdBook)
+
 	r.Run()
 }
