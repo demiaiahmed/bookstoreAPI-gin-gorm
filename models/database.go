@@ -13,5 +13,7 @@ func ConnectDatabase() {
 		panic("Failed to Connect to Database")
 	}
 	database.AutoMigrate(&Book{})
+	sqlDB, _ := database.DB()
+	defer sqlDB.Close()
 	DB = database
 }

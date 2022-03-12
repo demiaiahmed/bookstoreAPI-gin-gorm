@@ -12,7 +12,7 @@ func main() {
 
 	r.GET("/books", controllers.GetBooks)
 	r.GET("/books/:id", controllers.GetBook)
-	r.POST("/add", controllers.AddBook)
+	r.POST("/books", controllers.AddBook)
 	r.DELETE("/books/:id", controllers.DelBook)
 	r.PATCH("/books/:id", controllers.EdBook)
 
